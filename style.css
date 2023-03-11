@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding-top: 4rem;
+  overflow-x: hidden;
+  background-image: url("./static/costanza_mobile.jpeg");
+}
+
+img {
+  transform: rotate3d(0, 1, 0, 0deg);
+  transition: transform 1s linear;
+  width: 45%;
+}
+img:hover {
+  transform: rotate3d(0, 1, 0, 360deg);
+  transition: transform 1s linear;
+}
+
+.mobile {
+  display: none;
+}
+
+.title_img {
+  margin: auto;
+  text-align: center;
+}
+
+.title_img > h1 {
+  margin-bottom: 4rem;
+  font-size: 64px;
+}
+
+.rainbow {
+  animation: rainbow 2.5s linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rainbow {
+  100%,
+  0% {
+    color: rgb(255, 0, 0);
+  }
+  8% {
+    color: rgb(255, 127, 0);
+  }
+  16% {
+    color: rgb(255, 255, 0);
+  }
+  25% {
+    color: rgb(127, 255, 0);
+  }
+  33% {
+    color: rgb(0, 255, 0);
+  }
+  41% {
+    color: rgb(0, 255, 127);
+  }
+  50% {
+    color: rgb(0, 255, 255);
+  }
+  58% {
+    color: rgb(0, 127, 255);
+  }
+  66% {
+    color: rgb(0, 0, 255);
+  }
+  75% {
+    color: rgb(127, 0, 255);
+  }
+  83% {
+    color: rgb(255, 0, 255);
+  }
+  91% {
+    color: rgb(255, 0, 127);
+  }
+}
+
+.scroll {
+  position: relative;
+  margin-top: 4rem;
+  width: 100vw;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.m-scroll {
+  overflow: hidden;
+  height: 100%;
+  white-space: nowrap;
+  animation: scrollText 200s infinite linear;
+  display: inline-block;
+}
+
+span {
+  font-size: 50px;
+  display: inline-block;
+  min-width: 80vw;
+  margin: 0;
+  padding: 0;
+}
+
+.reverse {
+  animation-direction: reverse;
+}
+
+@keyframes scrollText {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    background-image: url("./static/costanza_img.jpeg");
+  }
+  .main_img {
+    display: none;
+  }
+  .mobile {
+    display: inline;
+  }
+}
